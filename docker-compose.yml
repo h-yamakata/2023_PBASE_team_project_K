@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db # データベースサーバ名
+      WORDPRESS_DB_USER: exampleuser # WordPress用接続ユーザ名
+      WORDPRESS_DB_PASSWORD: examplepass # WordPress用パスワード
+      WORDPRESS_DB_NAME: exampledb # WordPress用データベース名
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass # rootのパスワード
+      MYSQL_DATABASE: exampledb # WordPress用データベース名
+      MYSQL_USER: exampleuser # WordPress用接続ユーザ名
+      MYSQL_PASSWORD: examplepass # WordPress用パスワード
