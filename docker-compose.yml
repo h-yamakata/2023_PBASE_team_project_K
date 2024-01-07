@@ -3,6 +3,6 @@ services:    # 「作られるサービスの設定を以下に記載します�
   nginx:     # コンテナネーム(注1)
     build: ./nginx  # Dockerfileの場所
     ports:
-      - "80:80"  # EC2が公開しているポート番号:コンテナのポート番号
+      - "8080:80"
     volumes:
-      - ./html:/usr/share/nginx/html #EC2内のパス:コンテナ内のパス
+      - ./lab:/usr/share/nginx/html
