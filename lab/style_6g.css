@@ -1,0 +1,157 @@
+/* 全体のデザイン（アコーディオンメニュー） */
+.accordion-003 {
+    max-width: 500px;
+    margin-bottom: 7px;
+    border-bottom: 2px solid #204a87;
+}
+
+.accordion-003 summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em;
+    color: #000000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.accordion-003 summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-003 summary::before,
+.accordion-003 summary::after {
+    width: 3px;
+    height: .9em;
+    border-radius: 5px;
+    background-color: #000000b3;
+    content: '';
+}
+
+.accordion-003 summary::before {
+    position: absolute;
+    right: 2em;
+    rotate: 90deg;
+}
+
+.accordion-003 summary::after {
+    transition: rotate .3s;
+}
+
+.accordion-003[open] summary::after {
+    rotate: 90deg;
+}
+
+.accordion-003 p {
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: .3em 2em 1.5em;
+    color: #000000;
+    transition: transform .5s, opacity .5s;
+}
+
+.accordion-003[open] p {
+    transform: none;
+    opacity: 1;
+}
+
+/* パンくずリスト デザイン*/
+.breadcrumb-001 {
+    display: flex;
+    gap: 0 22px;
+    list-style: none;
+    padding: 0;
+    font-size: .9em;
+}
+
+.breadcrumb-001 li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-001 li:first-child::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 4px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20ZM11 13V19H13V13H11Z' fill='%23204a87'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    content: '';
+}
+
+.breadcrumb-001 li:not(:last-child)::after {
+    display: inline-block;
+    transform: rotate(45deg);
+    width: .3em;
+    height: .3em;
+    margin-left: 10px;
+    border-top: 1px solid #204a87;
+    border-right: 1px solid #204a87;
+    content: '';
+}
+
+.breadcrumb-001 a {
+    color: #333333;
+    text-decoration: none;
+}
+
+/* 見出しデザイン */
+.heading-033 {
+    border-bottom: 3px solid #031c8b;
+}
+
+.heading-033 span {
+    display: inline-block;
+    position: relative;
+    padding: 0 .4em .2em;
+    color: #031c8b;
+}
+
+.heading-033 span::before {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #031c8b;
+    content: '';
+}
+
+/* フッター　デザイン */
+.footer-001 {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    padding: 25px 10px 10px;
+    background-color: #00008B;
+}
+
+.footer-001__logo {
+    width: 130px;
+    height: 30px;
+}
+
+.footer-001__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1.5em;
+    list-style-type: none;
+    margin: 0 0 .5em;
+    padding: .5em;
+}
+
+.footer-001__link {
+    color: #fff;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.footer-001__copyright {
+    margin: 0;
+    color: #0c0b0bb3;
+    font-weight: 200;
+    font-size: .8em;
+}
